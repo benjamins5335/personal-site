@@ -1,0 +1,674 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a1a1a;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    --background-cream: #fefefe;
+    --background-off-white: #f9f9f9;
+    --white: #ffffff;
+    --scotland-blue: #005eb8;
+    --subtle-border: #e8e8e8;
+    --shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    --shadow-light: 0 1px 8px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s ease;
+    --border-radius: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--background-cream);
+    overflow-x: hidden;
+    letter-spacing: 0.3px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.couple-names {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 300;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s ease 0.5s both;
+    letter-spacing: 2px;
+}
+
+.ampersand {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 300;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.7s both;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(254, 254, 254, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--subtle-border);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo .nav-initials {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 300;
+    position: relative;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--scotland-blue);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--scotland-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Portrait Styles */
+.portrait-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: fadeIn 1s ease both;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portrait-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-off-white);
+    border: 1px solid var(--subtle-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-lighter);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.portrait-image[src="portrait.jpg"] + .portrait-placeholder {
+    opacity: 0;
+}
+
+.placeholder-text {
+    padding: 2rem;
+    line-height: 1.4;
+}
+
+/* Wedding Details */
+.wedding-details {
+    max-width: 600px;
+}
+
+.wedding-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    margin-top: 2rem;
+    animation: fadeInUp 1s ease 0.9s both;
+}
+
+.wedding-time {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.wedding-location {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* Decorative Accent */
+.highland-accent {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 1px;
+    height: 60px;
+    background: var(--subtle-border);
+    opacity: 0.3;
+}
+
+.thistle-icon {
+    display: none;
+}
+
+/* Page Specific Styles */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+    animation: fadeIn 0.8s ease both;
+}
+
+.page-title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--subtle-border);
+    margin: 1.5rem auto;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    animation: fadeInUp 0.8s ease both;
+}
+
+.section h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--subtle-border);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+}
+
+.section p {
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-weight: 300;
+}
+
+/* Travel Page Specific */
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hotel-card {
+    background: var(--white);
+    padding: 2rem;
+    border: 1px solid var(--subtle-border);
+    transition: var(--transition);
+}
+
+.hotel-card:hover {
+    box-shadow: var(--shadow-light);
+}
+
+.hotel-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.hotel-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* RSVP Button */
+.rsvp-container {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.rsvp-button {
+    display: inline-block;
+    background: var(--scotland-blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Crimson Text', serif;
+}
+
+.rsvp-button:hover {
+    background: #004494;
+    color: var(--white);
+}
+
+.rsvp-button::before {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .portrait-container {
+        width: 250px;
+        height: 330px;
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .wedding-info {
+        padding: 1.5rem;
+    }
+
+    .highland-accent {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .thistle-icon {
+        font-size: 1.5rem;
+    }
+
+    .page-container {
+        padding: 5rem 1rem 3rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+
+    .accommodation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .portrait-container {
+        width: 220px;
+        height: 290px;
+    }
+
+    .couple-names {
+        margin-bottom: 1rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .hotel-card {
+        padding: 1rem;
+    }
+}
+
+/* Schedule Page Specific */
+.timeline-container {
+    margin: 2rem 0;
+}
+
+.event-card {
+    position: relative;
+    margin-bottom: 2rem;
+    border-left: 1px solid var(--subtle-border);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-icon {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-cream);
+    border-radius: 50%;
+}
+
+.event-details {
+    margin-bottom: 1rem;
+}
+
+.event-date {
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.event-location {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+}
+
+.event-time {
+    color: var(--scotland-blue);
+    font-weight: 400;
+}
+
+.event-note {
+    background: var(--background-off-white);
+    padding: 1.2rem;
+    font-size: 0.95rem;
+    border-left: 1px solid var(--subtle-border);
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* Travel Page Specific */
+.accommodation-section {
+    margin-bottom: 3rem;
+}
+
+.location-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--subtle-border);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.beauly-title {
+    border-bottom-color: var(--scotland-blue);
+}
+
+.additional-info {
+    background: var(--background-off-white);
+    border-left: 1px solid var(--scotland-blue);
+}
+
+.gift-list {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--scotland-blue);
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* RSVP Page Specific */
+.rsvp-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rsvp-subtitle {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+}
+
+.rsvp-message {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.rsvp-note {
+    margin-top: 2rem;
+    color: var(--text-light);
+}
+
+.contact-info {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--background-off-white);
+    border: 1px solid var(--subtle-border);
+    color: var(--text-light);
+}
+
+/* Links */
+a {
+    color: var(--scotland-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hamburger,
+    .highland-accent {
+        display: none;
+    }
+
+    .main-content {
+        padding-top: 0;
+    }
+
+    body {
+        background: white;
+    }
+}
