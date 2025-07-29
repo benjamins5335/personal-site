@@ -22,7 +22,8 @@ wedding-website/
 ├── rsvp.html          # RSVP page with form link
 ├── styles.css         # Main stylesheet with all styling
 ├── script.js          # JavaScript for interactivity
-├── portrait.jpg       # Your portrait image (add this file)
+├── assets/madz_ian.jpg       # Your portrait image (add this file)
+
 └── README.md          # This file
 ```
 
