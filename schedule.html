@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Crimson+Text:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Crimson+Text:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -42,51 +46,101 @@
 
     <main class="page-container">
         <h1 class="page-title">Schedule</h1>
-        
+
+        <div class="event-summary-grid">
+            <div class="summary-box ceilidh-summary">
+                <a href="#ceilidh">
+                    <div class="summary-date">Friday 7th November</div>
+                    <div class="summary-event">Welcome Ceilidh</div>
+                    <div class="summary-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA" target="_blank">Moniack Castle</a>
+                    </div>
+                    <div class="summary-time">6:30 PM</div>
+                </a>
+            </div>
+
+            <div class="summary-box ceremony-summary">
+                <a href="#wedding">
+                    <div class="summary-date">Saturday 8th November</div>
+                    <div class="summary-event">Wedding Ceremony</div>
+                    <div class="summary-location"><a href="https://maps.app.goo.gl/oaoxRidmsLTuVp9B8" target="_blank">Eskadale
+                            Church</a></div>
+                    <div class="summary-time">2 PM</div>
+                </a>
+            </div>
+
+            <div class="summary-box reception-summary">
+                <a href="#reception">
+                    <div class="summary-date">Saturday 8th November</div>
+                    <div class="summary-event">Reception</div>
+                    <div class="summary-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA" target="_blank">Moniack Castle</a>
+                    </div>
+                    <div class="summary-time">4PM</div>
+                </a>
+
+            </div>
+        </div>
+
         <div class="section" data-delay="0.1">
             <h3>Overview</h3>
-            <p>Wedding celebrations will take place over two days, including a welcome ceilidh on Friday the 7th of November for those who can make it. This will be followed by our wedding and reception on Saturday the 8th of November. Let us know in the <a href=rsvp.html>RSVP form</a> if you plan on making both!</p>
+            <p>Wedding celebrations will take place over two days, including a welcome ceilidh on Friday the 7th of
+                November for those who can make it. This will be followed by our wedding and reception on Saturday the
+                8th of November. Let us know in the <a href=rsvp.html>RSVP form</a> if you plan on making both!</p>
+
+            <p>Transportation to the Church and then the reception venue on the day of the wedding is available via
+                coach and will be departing from the town of Beauly. Just let us know if you'd like to reserve a seat!
+            </p>
+
             
-            <p>Transportation to the Church and then the reception venue on the day of the wedding is available via coach and will be departing from the town of Beauly. Just let us know if you'd like to reserve a seat!</p>
         </div>
 
         <div class="timeline-container">
-            <div class="section event-card ceilidh" data-delay="0.2">
+            <div id="ceilidh" class="section event-card ceilidh" data-delay="0.2">
                 <h3>welcome ceilidh</h3>
                 <div class="event-details">
                     <div class="event-date">Friday, 7th of November</div>
-                    <div class="event-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA">Moniack Castle, IV5 7PQ</a></div>
+                    <div class="event-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA" target="_blank">Moniack Castle, IV5
+                            7PQ</a></div>
                     <div class="event-time">6:30 PM - 10 PM</div>
                     <div class="event-dress-code">Dress Code: Casual</div>
                 </div>
                 <div class="event-note">
-                    <em>For those traveling from out of town but very much optional! A great opportunity to learn some reels/ceilidh dancing and meet other guests. Like traditional ceilidhs, there will be an open floor for guests to contribute words, music or any special talents! </em>
+                    <em>For those traveling from out of town but very much optional! A great opportunity to learn some
+                        reels/ceilidh dancing and meet other guests. Like traditional ceilidhs, there will be an open
+                        floor for guests to contribute words, music or any special talents! </em>
                 </div>
             </div>
 
-            <div class="section event-card wedding" data-delay="0.3">
+            <div id="wedding" class="section event-card wedding" data-delay="0.3">
                 <h3>wedding ceremony</h3>
                 <div class="event-details">
                     <div class="event-date">Saturday, 8th of November</div>
-                    <div class="event-location"><a href="https://maps.app.goo.gl/oaoxRidmsLTuVp9B8">St. Mary's Church, Eskadale, IV4 4PJ</a></div>
+                    <div class="event-location"><a href="https://maps.app.goo.gl/oaoxRidmsLTuVp9B8" target="_blank">St. Mary's Church,
+                            Eskadale, IV4 4PJ</a></div>
                     <div class="event-time">2 PM - 3:30 PM</div>
                     <div class="event-dress-code">Dress Code: Unapologetic Glamour! Black Tie/Tartan encouraged.</div>
                 </div>
                 <div class="event-note">
-                    <em>The church might be cold so wrap up warm. Parking will be available in an adjacent field but there will be a bus service available from Beauly and to the reception after.</em>
+                    <em>The church might be cold so wrap up warm. Parking will be available in an adjacent field but
+                        there will be a bus service available from Beauly and to the reception after.</em>
                 </div>
             </div>
 
-            <div class="section event-card reception" data-delay="0.4">
+            <div id="reception" class="section event-card reception" data-delay="0.4">
                 <h3>reception</h3>
                 <div class="event-details">
                     <div class="event-date">Saturday 8th of November</div>
-                    <div class="event-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA">Moniack Castle, IV5 7PQ</a></div>
+                    <div class="event-location"><a href="https://maps.app.goo.gl/AT3WjABZufm5nsETA" target="_blank">Moniack Castle, IV5
+                            7PQ</a></div>
                     <div class="event-time">4 PM - Late</div>
                     <div class="event-dress-code">Dress Code: Unapologetic Glamour! Black Tie/Tartan encouraged.</div>
                 </div>
                 <div class="event-note">
-                    <em>The reception will be in the grounds of Moniack Castle. Kilts are very much encouraged, there are many kilt hire shops in Inverness.  Make sure to wear shoes you can dance in! Parking will also be available in an adjacent field, you can leave your car here overnight if needed. For those who aren’t driving, a late-night coach service back to Beauly will be provided for those interested. If not it will be worth pre arranging your taxi back to your accommodation in advance.</em>
+                    <em>The reception will be in the grounds of Moniack Castle. Kilts are very much encouraged, there
+                        are many kilt hire shops in Inverness. Make sure to wear shoes you can dance in! Parking will
+                        also be available in an adjacent field, you can leave your car here overnight if needed. For
+                        those who aren’t driving, a late-night coach service back to Beauly will be provided for those
+                        interested. If not it will be worth pre arranging your taxi back to your accommodation in
+                        advance.</em>
                 </div>
             </div>
         </div>
@@ -96,4 +150,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

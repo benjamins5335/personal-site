@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: fadeIn 1s ease both;
 }
 
-.portrait-image {
+.portrait-image, .map-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -557,6 +557,83 @@ h1, h2, h3, h4, h5, h6 {
         padding: 1rem;
     }
 }
+
+/* Schedule Page Specific */
+.event-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0 4rem 0;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-off-white) 100%);
+    border: 2px solid var(--subtle-border);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.summary-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: var(--scotland-blue);
+}
+
+.summary-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--scotland-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* .summary-box:hover::before {
+    transform: scaleX(1);
+} */
+
+.summary-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.summary-event {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.summary-time {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.summary-location {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
 
 /* Schedule Page Specific */
 .timeline-container {
